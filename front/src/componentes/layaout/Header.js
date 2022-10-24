@@ -27,8 +27,11 @@ const Header = () => {
                     </div>
                 </div>
                 <div className='col-12 col-md-3 mt-4 mt-md-0 text-center'>
-                    <button className='btn' id='login-btn'>Inicie Sesión</button>
-                    <span id='cart' className='ml-3'>Carrito</span>
+                    <span>
+                    <button class='btn btn-warning' id='login-btn'>Inicie Sesión</button>
+                    </span>
+                    
+                    <i class='fa fa-shopping-cart fa-2x text-white' aira-hidden="true"></i>
                     <span className='ml-1' id='cart_count'>2</span>
                 </div>
             </nav>
