@@ -9,19 +9,19 @@ import {
 } from "../constants/productsConstans";
 
 //En la ejecucuión voy a tener un estado que depende de la respuesta
-export const productsReducer = (state = { product: [] }, action) => {
+export const productsReducer = (state = { products: [] }, action) => {
     switch (action.type) {
         case ALL_PRODUCTS_REQUEST:
             return {
                 loading: true,
-                product: []
+                productos: []
             }
-        case PRODUCT_DETAILS_SUCCESS:
+        case ALL_PRODUCTS_SUCCESS:
             return {
                 loading: false,
-                product: action.payload.product,
+                productos: action.payload.product,
             }
-        case PRODUCT_DETAILS_FAIL:
+        case ALL_PRODUCTS_FAIL:
             return {
                 ...state,
                 error: action.payload
@@ -45,13 +45,13 @@ export const productsDetailsReducer = (state = { product: {} }, action) => {
                 ...state,
                 loading: true
             }
-        case ALL_PRODUCTS_SUCCESS:
+        case PRODUCT_DETAILS_SUCCESS:
             return {
                 loading: false,
                 productos: action.payload.productos,
                 cantidad: action.payload.cantidad
             }
-        case ALL_PRODUCTS_FAIL:
+        case PRODUCT_DETAILS_FAIL:
             return {
                 loading: false,
                 error: action.payload
