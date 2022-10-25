@@ -8,6 +8,13 @@ const fetch =(url)=>import('node-fetch').then(({default:fetch})=>fetch(url));
 
 exports.getProducts = async(req, res, next) => {
     const productos = await producto1.find();
+    if(!productos){
+        return res.status(404).json({
+            sucess: false,
+            message: 'No encontramos producto',
+            error: true
+        })    
+    }
     res.status(200).json({
         sucess: true,
         count: productos.length,
